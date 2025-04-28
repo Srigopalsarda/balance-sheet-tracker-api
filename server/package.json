@@ -1,0 +1,42 @@
+{
+  "name": "balance-sheet-tracker-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Balance Sheet Tracker",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "start": "NODE_ENV=production node dist/index.js",
+    "dev": "cross-env NODE_ENV=development tsx index.ts",
+    "db:migrate": "node ../scripts/migrate-prod-db.js"
+  },
+  "dependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/express": "^4.17.17",
+    "@types/jsonwebtoken": "^9.0.2",
+    "@types/node": "^20.4.5",
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.3.1",
+    "drizzle-orm": "^0.28.5",
+    "drizzle-zod": "^0.5.0",
+    "express": "^4.18.2",
+    "google-auth-library": "^9.0.0",
+    "googleapis": "^126.0.1",
+    "jsonwebtoken": "^9.0.1",
+    "nanoid": "^4.0.2",
+    "postgres": "^3.3.5",
+    "uuid": "^9.0.0",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/uuid": "^9.0.2",
+    "cross-env": "^7.0.3",
+    "drizzle-kit": "^0.19.13",
+    "esbuild": "^0.18.17",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
